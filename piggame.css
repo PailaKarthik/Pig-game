@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: rgb(32, 30, 30);
+  background-image: linear-gradient(to top left, #630e74 0%, #f5060e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(214, 179, 179, 0.35);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* ELEMENTS */
+.name {
+  position: relative;
+  flex-wrap: nowrap;
+  font-size: 3.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: #463434;
+  margin-bottom: auto;
+}
+
+.player--active {
+  background-color: #ffffff66;
+}
+.player--active .name {
+  font-weight: 700;
+  color: rgb(78, 236, 184);
+  text-shadow:  2px 2px 5px rgb(52, 53, 53) ;
+}
+.player--active .score {
+  font-weight: 400;
+  color: #0a0a0a;
+}
+
+.player--active .current {
+  opacity: 5;
+  color: aqua;
+}
+
+.current {
+  background-color: #e90646;
+  opacity: 1;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(13, 14, 13);
+  font-weight: 400;
+  background: none;
+  border: none;
+  /* font-family: inherit; */
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+
+  background-color: rgb(240, 232, 232);
+  backdrop-filter: blur(2px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: -0.1em -0.1em  whitesmoke,0.1em 0.1em 2px rgb(61, 56, 56);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  top: 39.3rem;
+}
+.btn--hold {
+  top: 46.1rem;
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  border-radius: 25px;
+  border:2px solid red;
+  image-rendering:optimizeQuality;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #e90445;
+}
+.player--winner .score{
+   color:  #e90445;
+}
+.hidden{
+  display: none;
+}
